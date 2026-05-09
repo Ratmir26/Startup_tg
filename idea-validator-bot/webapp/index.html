@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валидатор идей</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🧠 Валидатор идей</h1>
+        </header>
+
+        <section id="idea-section">
+            <label for="ideaInput">Твоя идея:</label>
+            <input type="text" id="ideaInput" placeholder="Введи идею..." maxlength="150">
+            <div id="charCounter">0/150</div>
+        </section>
+
+        <section id="arguments-section">
+            <div class="arguments-columns">
+                <div class="arguments-column">
+                    <h2 class="column-title pro-title">✅ ЗА (<span id="proCount">0</span>)</h2>
+                    <div id="proList" class="arguments-list"></div>
+                    <button class="add-btn add-pro-btn" id="addProBtn">+ ЗА</button>
+                </div>
+                <div class="arguments-column">
+                    <h2 class="column-title con-title">❌ ПРОТИВ (<span id="conCount">0</span>)</h2>
+                    <div id="conList" class="arguments-list"></div>
+                    <button class="add-btn add-con-btn" id="addConBtn">+ ПРОТИВ</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="progress-section">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar" style="width: 50%">50%</div>
+            </div>
+            <div id="progressPercent">50%</div>
+        </section>
+
+        <section id="verdict-section">
+            <div id="scoreDisplay">+0</div>
+            <div id="verdict" class="neutral">🤔 Добавь аргументы</div>
+            <div id="confidenceText">Статус: Нет данных</div>
+        </section>
+
+        <section id="actions-section">
+            <button id="saveBtn" class="action-btn save-btn">💾 Сохранить</button>
+            <button id="shareBtn" class="action-btn share-btn">📤 Поделиться</button>
+        </section>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modalTitle">Добавить аргумент</h3>
+            <input type="text" id="argumentInput" placeholder="Введи аргумент...">
+            <div id="weightSelector"></div>
+            <div class="modal-buttons">
+                <button id="modalCancel" class="modal-btn cancel">Отмена</button>
+                <button id="modalConfirm" class="modal-btn confirm">Добавить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
